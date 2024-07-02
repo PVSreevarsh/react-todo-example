@@ -42,7 +42,7 @@ function App() {
     createNewToDoItem();
   }
 
-  const deleteItem = (id) => {
+  const handleToggle = (id) => {
     setTodoList(
       todoList.forEach((item) => {
         item.visibility = item.id === id ? false : true;
@@ -74,7 +74,7 @@ function App() {
       <div className="mt-2">
         {todoList.length ? (
           <ul>
-            <ListItem list={todoList} deleteItem={deleteItem} />
+            <ListItem list={todoList} deleteItem={handleToggle} />
           </ul>
         ) : (
           <p>No items to list.</p>
